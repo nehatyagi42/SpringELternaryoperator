@@ -1,0 +1,15 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+ 
+	<bean id="customerBean" class="com.rtpl.common.Customer">
+		<property name="warning" 
+                          value="#{itemBean.qtyOnhand > 100 ? true : false}" />
+	</bean>
+ 
+	<bean id="itemBean" class="com.rtpl.common.Item">
+		<property name="qtyOnhand" value="99" />
+	</bean>
+	
+</beans>
